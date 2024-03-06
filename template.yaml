@@ -1,0 +1,17 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  aws opensearch and bedrock layer
+
+  Sample SAM Template for aws-opensearch-bedrock-layer
+
+Resources:
+  OpensearchBedrockLayer:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      LayerName: OpensearchBedrockLayer
+      ContentUri: layers/opensearch-bedrock
+      CompatibleRuntimes:
+        - python3.11
+    Metadata:
+      BuildMethod: makefile
